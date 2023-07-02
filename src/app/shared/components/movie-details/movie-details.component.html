@@ -1,0 +1,32 @@
+<div class="banner" *ngIf="this.movieDeatils"
+    [style.backgroundImage]="'url(https://image.tmdb.org/t/p/original/'+this.movieDeatils.poster_path +')'">
+
+    <!-- <img src="https://image.tmdb.org/t/p/original/{{this.movieDeatils.poster_path}}" alt=""> -->
+</div>
+
+<div class="trailers py-4">
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/QrvGP2cediw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3" *ngFor="let trailer of movietrailers">
+                <p class="alert alert-info traliername" (click)="runTrailer(trailer.key)">
+                    <!-- {{trailer | json}} -->
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/{{trailer.key}}"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe> -->
+                        {{trailer.name}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="tralier-container" *ngIf="trailerUrl">
+    <button class="closeModel" mat-raised-button color="warn" (click)="trailerUrl= ''">Close</button>
+    <iframe width="560" height="315" [src]="trailerUrl"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+</div>

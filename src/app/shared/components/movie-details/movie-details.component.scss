@@ -1,0 +1,36 @@
+
+
+.banner{
+    height: calc(100vh - 63px);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    > img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.traliername{
+    cursor: pointer;
+}
+
+.tralier-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: (#000000), $alpha: 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .closeModel{
+        position: absolute;
+        top: 31%;
+        right: 29%;
+    }
+}
